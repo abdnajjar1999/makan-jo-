@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحميل تطبيق Makan | jo - مكان للأردن</title>
+    <!-- Social Meta Tags -->
+    <meta name="description"
+        content="قم بتحميل تطبيق Makan | jo (مكان) لتجربة أفضل الخدمات في الأردن. متوفر الآن على متجر Play ومتجر App Store.">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Kufi+Arabic:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #5856d6;
+            --primary-gradient: linear-gradient(135deg, #5856d6 0%, #007aff 100%);
+            --bg: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --white: #ffffff;
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto+Kufi+Arabic', 'Outfit', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(88, 86, 214, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 122, 255, 0.15) 0%, transparent 40%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 90%;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--glass-shadow);
+            animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .logo-container {
+            width: 100px;
+            height: 100px;
+            background: var(--primary-gradient);
+            border-radius: 22px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(88, 86, 214, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-container::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.2) 50%, transparent 60%);
+            animation: shine 4s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) translateY(-100%);
+            }
+
+            100% {
+                transform: translateX(100%) translateY(100%);
+            }
+        }
+
+        .logo-text {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            border: 1px solid rgba(88, 86, 214, 0.2);
+        }
+
+        .loader {
+            width: 14px;
+            height: 14px;
+            border: 2px solid var(--primary);
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            display: inline-block;
+            animation: rotation 1s linear infinite;
+        }
+
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .store-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 24px;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-apple {
+            background-color: var(--white);
+            color: #000;
+        }
+
+        .btn-android {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            color: var(--white);
+        }
+
+        .button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-icon {
+            font-size: 1.5rem;
+        }
+
+        .btn-text {
+            text-align: right;
+            line-height: 1.2;
+        }
+
+        .btn-sub {
+            font-size: 0.7rem;
+            display: block;
+            opacity: 0.7;
+        }
+
+        .btn-main {
+            font-size: 1.1rem;
+            display: block;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .card {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <div class="logo-container">
+                <span class="logo-text">M|J</span>
+            </div>
+
+            <div class="status-badge" id="status-badge">
+                <span class="loader"></span>
+                <span>جاري التحويل تلقائياً...</span>
+            </div>
+
+            <h1>Makan | jo - مكان</h1>
+            <p>أهلاً بك. المرجو اختيار نسخة التطبيق المناسبة لجهازك للأردن إذا لم يتم تحويلك تلقائياً.</p>
+
+            <div class="store-buttons" id="desktop-view">
+                <a href="https://apps.apple.com/jo/app/makan-jo/id6755039657" class="button btn-apple" id="apple-link">
+                    <div class="btn-text">
+                        <span class="btn-sub">Download on the</span>
+                        <span class="btn-main">App Store</span>
+                    </div>
+                    <span class="btn-icon"></span>
+                </a>
+
+                <a href="https://play.google.com/store/apps/details?id=com.karkourstar.makaan"
+                    class="button btn-android" id="android-link">
+                    <div class="btn-text">
+                        <span class="btn-sub">Get it on</span>
+                        <span class="btn-main">Google Play</span>
+                    </div>
+                    <span class="btn-icon">▶</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 Makan | jo App. جميع الحقوق محفوظة.
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const androidUrl = "https://play.google.com/store/apps/details?id=com.karkourstar.makaan";
+            const iosUrl = "https://apps.apple.com/jo/app/makan-jo/id6755039657";
+
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const statusBadge = document.getElementById('status-badge');
+
+            function redirect() {
+                // Android detection
+                if (/android/i.test(userAgent)) {
+                    window.location.replace(androidUrl);
+                }
+                // iOS detection
+                else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                    window.location.replace(iosUrl);
+                }
+                else {
+                    // It's likely a desktop or unknown device, hide the auto-redirect badge
+                    statusBadge.style.display = 'none';
+                }
+            }
+
+            // Small delay to let users see the beautiful landing page briefly
+            // while transition happens (standard for "Opening App Store...")
+            setTimeout(redirect, 1000);
+        })();
+    </script>
+</body>
+
+</html>
